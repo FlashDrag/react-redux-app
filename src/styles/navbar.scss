@@ -1,0 +1,31 @@
+.navbar {
+  background: #0055a9;
+  color: #fff;
+
+  .selected {
+    i {
+      color: #a6d2ff;
+    }
+  }
+
+  i {
+    font-size: 3rem;
+    color: #fff;
+    margin: 1rem;
+
+    &:hover {
+      color: #a6d2ff;
+    }
+  }
+
+  .cart-number {
+    position: absolute;
+    right: -0.3rem;
+    top: -2.5rem;
+    border-radius: 50%;
+    color: #fff;
+    background: #337ab7;
+    padding: 1rem 0.6rem;
+    font-size: 1.2rem;
+  }
+}

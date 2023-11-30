@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import './styles/index.scss';
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <div className="container">
         <Routes>
           <Route path='/' element={<Home />} />
