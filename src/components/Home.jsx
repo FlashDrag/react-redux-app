@@ -9,13 +9,15 @@ const Home = () => {
           return (
             <div className="wrapper col mb-4" key={product.id}>
               <div className="card h-100 d-flex align-items-center">
-                <img
-                  src={product.imageUrl}
-                  alt={product.name}
-                  className="card-img-top p-3"
-                />
+                <div className="d-flex flex-grow-1 flex-wrap align-items-center">
+                  <img
+                    src={product.imageUrl}
+                    alt={product.name}
+                    className="card-img-top p-3"
+                  />
+                </div>
 
-                <div className="card-body text-center d-flex flex-column justify-content-end">
+                <div className="card-body text-center flex-grow-0">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text ">{product.price}</p>
                   <button className="btn btn-primary">Add to cart</button>
