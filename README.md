@@ -17,6 +17,7 @@ Simple E-commerce React web app with Redux toolkit for state management.
 - Node Sass - CSS preprocessor
 - Bootstrap for styling
 - Json Server for mock API (simulates a REST API using a JSON file as a data source)
+- Concurrently for running multiple commands concurrently
 
 ## Local Setup
 1. Clone or fork the repo
@@ -24,19 +25,38 @@ Simple E-commerce React web app with Redux toolkit for state management.
 ```bash
 $ npm install
 ```
-3. Run the local server
+3. Run the local json server and start the app
+- Run separately in two terminals
 ```bash
-$ npx json-server './src/data/productList.json'
-```
-3. Run the app
-```bash
+$ npx json-server './src/data/productList.json' --port 3001
 $ npm start
 ```
+
+**OR**
+
+- Run concurrently
+    - Install `concurrently` package
+    ```bash
+    $ npm install concurrently
+    ```
+    - Add the following line to `package.json`
+    ```json
+    "scripts": {
+        // ...
+        "server": "json-server --watch ./src/data/productList.json --port 3001",
+        "dev": "concurrently \"npm start\" \"npm run server\""
+    }
+    ```
+    - Run the following command
+
+    ```bash
+    $ npm run dev
+    ```
 
 ## Deployment
 Deploy React app with JSON server on Heroku
 
-https://react-redux-spa.herokuapp.com/
+https://react-redux-spa-87750a2967c2.herokuapp.com/
 
 1. Create Procfile in the root directory and add the following line:
 ```bash
