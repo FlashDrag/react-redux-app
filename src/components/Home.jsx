@@ -11,14 +11,15 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchAllProducts("/products"));
-  }, [dispatch]);
+  }, []);
+
 
   return (
     <div className="container product-catalogue">
       {products.fetchStatus === "loading" ? (
         <h1>Loading...</h1>
-      ) : products.fetchStatus === "error" ? (
-        <h1>Error</h1>
+      ) : products.fetchStatus !== "loading" && products.fetchStatus === "error" ? (
+        <h1>{products.error.message}</h1>
       ) : (
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
           {products.data.map((product) => {
